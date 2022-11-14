@@ -16,6 +16,7 @@ void linearfit(){
 
   gROOT->SetStyle("Plain");
   gStyle->SetPalette(57);
+  gStyle->SetFitFormat("3.3g");
 
   const int n_points=16;
     double x_vals[n_points]={0.049,0.099,0.147,0.198,0.248,0.294,
