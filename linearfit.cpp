@@ -14,17 +14,18 @@
 
 void linearfit(){
 
-  gROOT->SetStyle("Plain");
-  gStyle->SetPalette(57);
+  //gROOT->SetStyle("Plain");
+  //gStyle->SetPalette(57);
   gStyle->SetFitFormat("3.3g");
+
 
   const int n_points=16;
     double x_vals[n_points]={0.049,0.099,0.147,0.198,0.248,0.294,
       0.343,0.395,0.443,0.492,0.539,0.589,0.629,0.708,0.749,0.788};
     double y_vals[n_points]={0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,
       0.5,0.55,0.6,0.65,0.7,0.75,0.8};
-    double y_errs[n_points]={0.00150333,0.003001666,0.004527693,0.006020797,0.007516648,0.009055385,
-      0.010547512,0.012041595,0.013647344,0.015132746,0.01662077,0.01811077,0.019602296,0.021095023,0.022588714,0.024083189};
+    double y_errs[n_points]={0.001803,0.003162,0.006727,0.00781,0.009014,0.013454,
+      0.0145,0.01562,0.02413,0.025,0.025928,0.026907,0.027933,0.029,0.030104,0.031241};
   
   TCanvas *calibrazione = new TCanvas("c", "Calibrazione",200,10,700,500);
 
@@ -33,8 +34,8 @@ void linearfit(){
   
   graph->SetTitle("Calibrazione della DDP"); 
   graph->SetMarkerStyle(kOpenCircle);
-  graph->SetMarkerColor(kBlue);
-  graph->SetLineColor(kBlue);
+  graph->SetMarkerColor(kBlack);
+  graph->SetLineColor(kBlack);
   graph->GetXaxis()->SetTitle("Multimetro(V)");
   graph->GetYaxis()->SetTitle("Oscilloscopio(V)");
     
