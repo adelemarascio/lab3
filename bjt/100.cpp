@@ -23,7 +23,7 @@ void cento(){
   
   TCanvas *canvas = new TCanvas("c", "fit",200,10,700,500);
 
-  TGraphErrors * graph1 = new TGraphErrors("prova.txt","%lg %*lg %lg %lg");
+  TGraphErrors * graph1 = new TGraphErrors("100err.txt","%lg %*lg %lg %lg");
   
   graph1->SetTitle("Base 0.1A"); 
   graph1->SetMarkerStyle(20);
@@ -35,10 +35,10 @@ void cento(){
   graph1->GetYaxis()->SetTitle("Corrente -I_{C} (A)");
     
   graph1->Draw("APE");
-
-  graph1->Fit("pol1"); //[0]+[1]*x
-  TF1 *fit = graph1->GetFunction("pol1");
-  fit->SetRange(0.8,3);
+  TF1 *fit = new TF1("f1","pol1",.8,3); 
+  graph1->Fit("f1","R"); //[0]+[1]*x
+  //TF1 *fit = graph1->GetFunction("pol1");
+  //fit->SetRange(0.8,3);
   fit->SetParName(0, "a");
   fit->SetParName(1, "b");
 
